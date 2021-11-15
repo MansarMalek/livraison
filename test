@@ -11,6 +11,13 @@
                 }
             }
         }
+        stage('npm-Install') {
+             steps{
+                script{
+                    sh "sudo npm install"
+                }
+            }
+        }
         stage('Build')
 {
                   steps {
@@ -19,6 +26,17 @@
                  }
              }
         }
+        stage('docker_registry') {
+steps{
+script {
+
+
+sh "ansible-playbook Ansible/docker-registry.yml -i Ansible/inventory/host.yml "
+
+
+}
+}
+}
         
       }
       }
