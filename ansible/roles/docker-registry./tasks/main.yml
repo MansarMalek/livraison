@@ -6,7 +6,7 @@
 
 - name: Tag and push to docker hub
   docker_image:
-    name: projet1:latest
+    name: Pipeline script from SCM:latest
     repository: mansarma/devops
     tag: end 
     push: yes
