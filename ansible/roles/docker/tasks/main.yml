@@ -2,7 +2,7 @@
 # tasks file for docker
 - name: create image docker
   docker_image:
-    name: Projet
+    name: Pipeline script from SCM
     build:
      path: /var/lib/jenkins/workspace/Pipeline script from SCM
      pull: no
@@ -12,7 +12,7 @@
 - name: run container docker
   docker_container:
     name: myapp_container
-    image: Project:latest
+    image: Pipeline script from SCM:latest
     state: started
     recreate: true
     ports:
